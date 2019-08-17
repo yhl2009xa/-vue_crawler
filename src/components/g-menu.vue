@@ -1,14 +1,17 @@
 <template>
 <div class="g-menu fixed-bottom-compatibility-iphoneX">
-  <ul>
-  <li v-for="(menu,idx) in menus" class="flex1" :class="{actived:active == idx}">
-  {{menu.name}}
-</li>
-</ul>
+
+  <router-link v-for="(menu,idx) in menus" class="flex1" :key="menus.id" :to="{name:menu.path}" @click.native="changeMenu(idx)" :exact="menu.path == 'index'? true:false">
+    <font-awesome-icon :icon="['fas',menu.icon]" size="2x" />
+    <p>{{menu.name}}</p>
+
+</router-link>
 </div>
 </template>
 
 <script>
+
+
 export default {
   name: "g-menu",
   data(){
@@ -17,22 +20,23 @@ export default {
         {
           id:1,
           name:'主页',
-          icon:'',
+          icon:'home',
+          path:'index'
 
         },
 
         {
           id:2,
           name:'新闻',
-          icon:'',
-
+          icon:'newspaper',
+          path:'news'
         },
 
         {
           id:2,
           name:'我的',
-          icon:'',
-
+          icon:'user',
+          path:'user'
         }
       ],
       active:0
@@ -40,7 +44,13 @@ export default {
 
   },
   mounted() {
+  },
+  methods:{
+    changeMenu(idx){
+      this.active = idx;
+    }
   }
+
 }
 </script>
 

@@ -1,0 +1,31 @@
+.g-nav-bar{
+  height: .52rem;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  border-bottom: 1px solid #dcdcdc;
+  border-bottom-color: rgba(220,220,220,.5);
+
+  .nav-bar-list{
+    //overflow: hidden;
+    //overflow-x: scroll;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    height: .52rem;
+    line-height: .52rem;
+    li{
+      font-size: .17rem;
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: .1rem;
+      padding-right: .1rem;
+      color: #505050;
+    }
+    .active{
+      color: @base-active;
+    }
+  }
+}
+

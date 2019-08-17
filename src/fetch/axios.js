@@ -4,7 +4,7 @@ import vueAxios from 'vue-axios'
 import Request from './request'
 
 
-axios.defaults.timeout = 5000;
+axios.defaults.timeout = 40000;
 //发生错误 执行axiosRetryInterceptor重连的机制
 axios.interceptors.response.use(undefined, function axiosRetryInterceptor (err) {
   var config = err.config;

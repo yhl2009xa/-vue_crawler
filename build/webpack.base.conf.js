@@ -19,10 +19,23 @@ const createLintingRule = () => ({
   }
 })
 
+
+const getEntries = () => {
+  let result = fs.readdirSync(pagesDirPath);
+  let entry = {};
+  result.forEach(item => {
+    entry[item] = path.resolve(__dirname, `../src/pages/${item}/index.js`);
+  });
+  return entry;
+}
+
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
+
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    test: './src/main.js',
   },
   output: {
     path: config.build.assetsRoot,
@@ -32,7 +45,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', 'css', '.less'],
     alias: {
       '@': resolve('src'),
     }
@@ -51,7 +64,7 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,

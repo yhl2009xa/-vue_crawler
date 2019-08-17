@@ -103,10 +103,43 @@
   -ms-flex-line-pack: distribute;
 }
 
+.flex-main-space-between {
+  justify-content: space-between;
+}
+
 .flex1 {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.flex-row {
+  .flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  .flex;
+  flex-direction: column;
+}
+
+.flex-main-cross-center{
+  .flex();
+  .flex-direction(row);
+  .flex-justify-content(center);
+  .flex-align-items(center)
+}
+
+//行两端对齐
+.flex-row-main-space-between{
+  .flex-row;
+  .flex-main-space-between;
+}
+
+//列首尾两端对齐
+.flex-column-main-space-between{
+  .flex-column;
+  .flex-main-space-between;
 }

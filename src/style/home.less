@@ -1,15 +1,24 @@
 .m-home {
-  height: 500px;
-  position: relative;
+  height: 100vh;
+  .m-home-wrapper{
+    position: relative;
+  }
   .pull-up-down-wrapper{
+    //overflow: hidden;
+    overflow: hidden;
     position: absolute;
     top:0px;
-    bottom: 0px;
-    padding-bottom:.5rem;
+    bottom: .5rem;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    //padding-bottom: .5rem;
+
   }
   .box_item {
     margin-bottom: .15rem;
     border-bottom: 1px dashed @base-grey-line;
+    padding: 0px 15px;
 
     p {
       color: @base-font-color;

@@ -53,6 +53,8 @@ export default params => {
   // 默认取 BASEURL
   isEmpty(params.url) && (params.url = BASE_URL);
 
+  isEmpty(params.outsideApi) && (params.outsideApi = false)
+
   // 默认给 body
   isEmpty(params.body) && (params.body = {});
 
@@ -64,6 +66,12 @@ export default params => {
   params.body.os = 'web';
   params.body.c = 'mobile';
   params.body.ua = navigator.userAgent;
+
+
+
+  params.outsideApi && ( params.config={
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  })
 
 
   // 解析以字符串形式传固定参数结构
@@ -102,11 +110,15 @@ export default params => {
   // @method 支持自定义 请求方法（GET,POST），其余转为POST（除了jsonp）
   // @body，@config 参考axios - config说明
   // https://github.com/axios/axios
+
+
   if (isEmpty(params.method) || params.method.toLowerCase() === 'post') {
+
     Axios.post(params.url, params.body && params.body, params.config && params.config).then(s => successCallback(s, params)).catch(e => {
       errorCallback(e)
     })
   } else if (params.method.toLowerCase() === 'get') {
+
     // vue.$store.dispatch('showLoading');
     Axios.get(params.url, params.config && params.config).then(s => successCallback(s, params)).catch(e => {
       errorCallback(e)
@@ -132,7 +144,12 @@ function successCallback(res, params) {
   if (!Number(code)) {
     if (params.success !== undefined) {
       if (isFun(params.success)) {
-        params.success(data.data, data.extra);
+        if(params.outsideApi){
+          params.success(data.result, data.extra);
+        }else{
+          params.success(data.data);
+        }
+
         return
       }
       throw new Error('成功回调函数(success)格式错误，值为：' + params.success + ', 应该为：Function')

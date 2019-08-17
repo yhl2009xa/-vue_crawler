@@ -1,0 +1,29 @@
+.g-navigation-bar{
+  background: #f4f5f6;
+  height: .37rem;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  .nav-bar-list{
+    //overflow: hidden;
+    //overflow-x: scroll;
+    position: relative;
+    white-space: nowrap;
+    &::-webkit-scrollbar { display: none; }
+    height: .52rem;
+    line-height: .52rem;
+    transition: all 0s linear;
+    li{
+      font-size: .17rem;
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: .1rem;
+      padding-right: .1rem;
+      color: #505050;
+    }
+    .active{
+      color: @base-active;
+    }
+  }
+}

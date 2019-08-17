@@ -5,6 +5,13 @@
 
 import Vue from 'vue'
 
+//引入font-awesome图标
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {fas} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(fas)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 /**
  * 首字母大写
  * @param str 字符串

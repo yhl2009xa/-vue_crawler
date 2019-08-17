@@ -1,19 +1,17 @@
 .g-menu{
-  border-top: 1px solid #f76a2b;
+  border-top: 1px solid @base-active;
   background-color: hsla(0,0%,100%,.99);
   height: .5rem;
   display: flex;
   align-items: center;
-  ul{
-    width: 100%;
-    .flex();
-    li{
-      list-style: none;
-      font-size: .16rem;
-    }
-    .actived{
-      color:#f76a2b;
-    }
+  a{
+    font-size: .1rem;
+    color: @base-font-color;
   }
+
+  .router-link-active{
+    color:#f76a2b;
+  }
+
 
 }

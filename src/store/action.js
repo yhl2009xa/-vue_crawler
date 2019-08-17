@@ -1,15 +1,91 @@
 import Request from '../fetch/request'
 import api from '../utils/api'
+
+
 /**
- * 获取首页数据
+ * 获取新闻数据
  * @param ctx
  * @param obj
+ **/
+export const fetchNewsHomePage = (ctx,obj) =>{
+    Request({
+      url:api.NEWS_LIST +'?page='+ obj.params.pagestart+"&count="+obj.params.pagenum,
+      body: {
+        page: obj.params.pagestart || 1,
+        count: obj.params.pagenum || 15
+      },
+      outsideApi:true,
+      success: res => {
+        obj.success && obj.success(res);
+      },
+    });
+  }
+
+/***
+ * 获取网易新闻数据
  */
-export const fetcHomePage = (ctx,obj) =>{
+export const fetchWYNewsHomePage = (ctx,obj) =>{
   Request({
-    url:api.HOME,
+    url:api.WY_NEWS_LIST,
+    body: {
+      type:obj.params.type,
+      page: (obj.params.pagestart || 0 ) * (obj.params.pagenum || 15),
+      count: obj.params.pagenum || 15
+    },
+
     success: res => {
       obj.success && obj.success(res);
     },
   });
 }
+
+
+
+
+
+
+
+
+
+
+/**
+ * 获取段子列表
+ * @param ctx
+ * @param obj
+ **/
+export const fetchJokeListPage = (ctx,obj) =>{
+  Request({
+    method:'get',
+    url:api.JOKE_LIST +'?type=' + (obj.params.type ?  obj.params.type:'text') + '&page=' +obj.params.pagestart+"&count="+obj.params.pagenum,
+    body: {
+      page: obj.params.pagestart || 1,
+      count: obj.params.pagenum || 15
+    },
+    outsideApi:true,
+    success: res => {
+      obj.success && obj.success(res);
+    },
+  });
+}
+
+
+
+
+/**
+ * 获取首页数据
+ * @param ctx
+ * @param obj
+ */
+export const fetchHomePage = (ctx,obj) =>{
+  Request({
+    url:api.HOME ,
+    body: {
+      pagestart: obj.pagestart || 0,
+      pagenum: obj.pagenum || 15
+    },
+    success: res => {
+      obj.success && obj.success(res);
+    },
+  });
+}
+

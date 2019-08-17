@@ -1,0 +1,36 @@
+.m-news-content {
+  position: absolute;
+  top: .52rem;
+  bottom: .5rem;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 .1rem;
+  .new-items {
+    .thinner-border-bottom(@base-grey-line);
+    padding: .1rem 0;
+    .left{
+      width: 2.5rem;
+      text-align: left;
+      a{
+        font-size: .16rem;
+        color: @base-font-color;
+
+      }
+      .bottom{
+        p{
+          color: @base-font-grey-color;
+          line-height: 1;
+          &:nth-child(1){
+            color: @base-font-line;
+          }
+        }
+      }
+    }
+    .right{
+      width: 1.28rem;
+      margin-left: .1rem;
+    }
+  }
+
+}
