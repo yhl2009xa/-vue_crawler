@@ -1,0 +1,68 @@
+.m-user-book-menus-control{
+   position: fixed;
+   bottom:50px;
+   left:0px;
+   width: 100%;
+   background-color: #fff;
+
+  .progress{
+    .thinner-border-top(@base-grey-line);
+    padding: .1rem .15rem;
+    p{
+      font-size: .14rem;
+      color: @base-font-color;
+    }
+    .disabled{
+      color: @base-font-placeholder;
+    }
+  }
+
+  .set-up{
+    .thinner-border-top(@base-grey-line);
+    background-color: @white-color;
+    padding: .1rem 0px;
+    .top{
+      justify-content: space-between;
+      padding: 0 8%;
+      p{
+        width: 40%;
+        border: 1px solid @base-grey-line;
+        padding: .05rem;
+        border-radius: 4px;
+        font-size: large;
+        label{
+          margin-left: 10px;
+        }
+      }
+    }
+    .bottom{
+      justify-content: space-between;
+      padding: 20px 8% 0px;
+      div{
+        padding:.06rem ;
+        font-size: .14rem;
+        border-radius: 4px;
+        width: .60rem;
+      }
+      .grey{
+        background-color: @grey-background;
+      }
+      .green{
+        background-color: #8bc9c9;
+      }
+      .yellow{
+        background-color: #e7ccac;
+      }
+      .pink{
+        background-color: #efbbc0;
+      }
+      .active{
+        content: ' ';
+        background-image: url('../../../assets/user-read-menus.png') ;
+        background-size: 11px 8px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}

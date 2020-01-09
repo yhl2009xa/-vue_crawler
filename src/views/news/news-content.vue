@@ -57,6 +57,7 @@
         canvasImg:''
       }
     },
+      
     mounted(){
       this.$nextTick(()=>{
         this.queryList();

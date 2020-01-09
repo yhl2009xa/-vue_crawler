@@ -2,12 +2,10 @@
 
 > 新的vue项目
 
-## Build Setup
-
+#### 安装依赖文件
+    vue-touch@next
+ 
 ``` bash
-# install dependencies
-npm install
-
 # serve with hot reload at localhost:8080
 npm run dev
 

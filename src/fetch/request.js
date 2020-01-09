@@ -29,9 +29,7 @@ const vue = new Vue({
  * code_xxx                   可选          覆盖全局对code=xxx的处理，需要同时给error回调
  * pending                    可选          请求是否在发送中
  * loading                    可选          是否显示转菊花（加载状态）
- * optional                   可选          可选项
- * access                      可选            兼容APP第三方调接口时accessToken
- *
+ * outsideApi                 可选          直接读取第三方的接口不通过服务器
  * **/
 
 export default params => {
@@ -53,6 +51,7 @@ export default params => {
   // 默认取 BASEURL
   isEmpty(params.url) && (params.url = BASE_URL);
 
+  //
   isEmpty(params.outsideApi) && (params.outsideApi = false)
 
   // 默认给 body

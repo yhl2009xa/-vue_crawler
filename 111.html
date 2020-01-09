@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  　　<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body >
+<div>测试渐变色</div>
+<button onclick="changeColor()" style="background-color:'linear-gradient(to right,red, green)'">点击变换背景色</button>
+
+<style>
+  div{
+    background-color: yellow;
+  }
+</style>
+<script>
+  var changeColor = function() {
+      document.querySelector("div").setAttribute('style', 'background-color:linear-gradient(to right,red, green)')
+
+  }
+</script>
+</body>
+</html>

@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-
-
     <router-view>
 
     </router-view>
 
     <!-- 菜单栏 -->
-    <g-menu ></g-menu>
+    <g-menu v-if="$route.meta.menu"></g-menu>
 
   </div>
 </template>
-
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+    mounted() {
+        // 解决button active失效问题
+        document.addEventListener("touchstart", () => {
+        }, true);
+    },
 }
 </script>
 

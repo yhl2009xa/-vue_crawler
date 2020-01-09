@@ -2,10 +2,11 @@ let BASE_URL = 'http://192.168.0.105:8089';
 let BASE_OUTER_API_URL = 'https://api.apiopen.top';
 
 
+
 /**
  * 区分线上环境(build)/开发环境(dev)/测试环境(test)
  * **/
-export const isBuild = /(https|http):\/\/(www.ffxworld.cn)/i.test(location.href.toLowerCase());
+export const isBuild = /(https|http):\/\/(www.ffxworld.cn|ffxworld.cn)/i.test(location.href.toLowerCase());
 // export const isDev = /https:\/\/(devmobile\.comein\.cn|devserver\.comein\.cn)/i.test(location.href.toLowerCase());
 // export const isTest = /https:\/\/(testmobile\.comein\.cn|testserver\.comein\.cn)/i.test(location.href.toLowerCase());
 
@@ -21,7 +22,18 @@ export default {
   //获取段子列表
   JOKE_LIST:BASE_OUTER_API_URL + "/getJoke",
   //获取网易新闻api
-  WY_NEWS_LIST:BASE_URL + "/getWYNews"
+  WY_NEWS_LIST:BASE_URL + "/getWYNews",
 
+
+
+
+
+  //获取彩票信息
+  //红袖万码
+  CP_HX_LIST:BASE_URL +'/getCpHx',
+  //琅琊万码
+  CP_LY_LIST:BASE_URL +'/getCpLy',
+  //乾坤万码
+  CP_QK_LIST:BASE_URL +'/getCpQk',
 
 }

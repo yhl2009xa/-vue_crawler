@@ -54,3 +54,15 @@ export const removeBr = str => {
   const reg = new RegExp(/<br\s*\\?\/?>/gi);
   return reg.test(str) ? str.replace(reg, '') : str;
 };
+
+/**
+ * 转义str字符
+ * @param str
+ * @returns {string|*}
+ */
+export const escapeXmlChars=(str)=> {
+  if (typeof(str) == "string")
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+  else
+    return str;
+}

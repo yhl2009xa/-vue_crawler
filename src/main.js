@@ -6,6 +6,7 @@ import axios from './fetch/axios';
 import './components/index'
 
 import './utils/mobileAdaptive'
+import './utils/mobileEventDisabled'
 
 import './style/index.less'
 
@@ -14,9 +15,6 @@ import './style/index.less'
 // new VConsole();
 
 Vue.config.productionTip = false;
-
-
-
 
 
 /* eslint-disable no-new */

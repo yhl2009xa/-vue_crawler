@@ -4,13 +4,22 @@ p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, div, pre, body, code, form, i
   font-weight: normal;
   word-wrap: break-word;
   word-break: normal;
+  &::-webkit-scrollbar{
+    display: none;
+    background-color:transparent;
+  }
 }
+
 
 * {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
   text-decoration: none;
+
 }
+
+
+
 
 body, html {
   height: 100%;

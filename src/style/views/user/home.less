@@ -1,0 +1,50 @@
+.m-user-book{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  .content{
+    height: 100%;
+    width: 100%;
+  }
+  .mask{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    .left{
+      width: 20%;
+      height: 100%;
+    }
+    .right{
+      width: 20%;
+      height: 100%;
+    }
+  }
+  .slider-down-enter,.slider-down-leave-to{
+    transform: translate(0,100%);
+
+  }
+  .slider-down-enter-to,.slider-down-leave{
+    transform: translate(0,0);
+  }
+  .slider-down-enter-active,.slider-down-leave-active{
+    transition:all .5s ease;
+  }
+
+
+  .left-move-enter,.left-move-leave-to{
+    transform: translate(-100%,0);
+
+  }
+  .left-move-enter-to,.left-move-leave{
+    transform: translate(0,0);
+  }
+  .left-move-enter-active,.left-move-leave-active{
+    transition:all .5s ease;
+  }
+
+
+
+}
